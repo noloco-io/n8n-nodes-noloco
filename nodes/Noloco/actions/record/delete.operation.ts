@@ -1,4 +1,9 @@
-import type { IExecuteFunctions, INodeExecutionData, INodeProperties, IDataObject } from 'n8n-workflow';
+import type {
+	IExecuteFunctions,
+	INodeExecutionData,
+	INodeProperties,
+	IDataObject,
+} from 'n8n-workflow';
 
 import { updateDisplayOptions } from '../../helpers/utils';
 import { deleteProjectRecord } from '../../helpers/transport';
@@ -58,4 +63,3 @@ export async function execute(
 
 	return returnData;
 }
-

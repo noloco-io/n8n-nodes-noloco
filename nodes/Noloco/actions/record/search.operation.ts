@@ -1,4 +1,9 @@
-import type { IExecuteFunctions, INodeExecutionData, INodeProperties, IDataObject } from 'n8n-workflow';
+import type {
+	IExecuteFunctions,
+	INodeExecutionData,
+	INodeProperties,
+	IDataObject,
+} from 'n8n-workflow';
 import { NodeOperationError } from 'n8n-workflow';
 
 import { updateDisplayOptions } from '../../helpers/utils';
@@ -69,13 +74,11 @@ const properties: INodeProperties[] = [
 				name: 'conditions',
 				values: [
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
-						displayName: 'Field',
+						displayName: 'Field Name or ID',
 						name: 'field',
 						type: 'options',
-						// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-options
 						description:
-							'Choose from the list, or specify an API name using an <a href="https://docs.n8n.io/code/expressions/" target="_blank">expression</a>',
+							'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
 						default: '',
 						placeholder: 'e.g. email',
 						typeOptions: {
@@ -88,19 +91,14 @@ const properties: INodeProperties[] = [
 						name: 'operator',
 						type: 'options',
 						description: 'The operator to use for comparison',
-						// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 						options: [
-							{
-								name: 'Equals',
-								value: 'equals',
-							},
-							{
-								name: 'Not Equals',
-								value: 'not_equals',
-							},
 							{
 								name: 'Contains',
 								value: 'contains',
+							},
+							{
+								name: 'Equals',
+								value: 'equals',
 							},
 							{
 								name: 'Greater Than',
@@ -111,6 +109,10 @@ const properties: INodeProperties[] = [
 								value: 'gte',
 							},
 							{
+								name: 'In (List)',
+								value: 'in',
+							},
+							{
 								name: 'Less Than',
 								value: 'lt',
 							},
@@ -119,8 +121,8 @@ const properties: INodeProperties[] = [
 								value: 'lte',
 							},
 							{
-								name: 'In (List)',
-								value: 'in',
+								name: 'Not Equals',
+								value: 'not_equals',
 							},
 							{
 								name: 'Not In (List)',
@@ -170,13 +172,11 @@ const properties: INodeProperties[] = [
 				name: 'rules',
 				values: [
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
-						displayName: 'Field',
+						displayName: 'Field Name or ID',
 						name: 'field',
 						type: 'options',
-						// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-options
 						description:
-							'Choose from the list, or specify an API name using an <a href="https://docs.n8n.io/code/expressions/" target="_blank">expression</a>',
+							'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
 						default: '',
 						typeOptions: {
 							loadOptionsMethod: 'getSearchableFields',
@@ -345,4 +345,3 @@ export async function execute(
 
 	return returnData;
 }
-
