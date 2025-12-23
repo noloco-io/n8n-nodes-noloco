@@ -1,6 +1,6 @@
 {
 	"name": "@noloco/n8n-nodes-noloco",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "n8n community node for Noloco - a no-code platform for building internal tools and client portals",
 	"license": "MIT",
 	"homepage": "https://noloco.io",
