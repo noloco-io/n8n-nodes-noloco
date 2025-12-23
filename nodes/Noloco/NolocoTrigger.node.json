@@ -1,0 +1,19 @@
+{
+	"node": "n8n-nodes-noloco",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Data & Storage", "Productivity"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://guides.noloco.io/settings/integrations-and-api-keys#api-keys"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://guides.noloco.io/"
+			}
+		]
+	}
+}
+
