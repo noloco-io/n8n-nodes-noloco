@@ -2,3 +2,4 @@ dist
 node_modules
 _zapier/
 _postgres/
+.idea
