@@ -1,3 +1,4 @@
+import { NodeOperationError } from 'n8n-workflow';
 import type { IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
 
 import * as record from './record/Record.resource';
@@ -20,7 +21,7 @@ export async function router(this: IExecuteFunctions): Promise<INodeExecutionDat
 			returnData = await record[nolocoNodeData.operation].execute.call(this, items);
 			break;
 		default:
-			throw new Error(`The resource "${resource}" is not supported!`);
+			throw new NodeOperationError(this.getNode(), `The resource "${resource}" is not supported!`);
 	}
 
 	return [returnData];
